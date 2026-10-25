@@ -64,40 +64,19 @@ The confusion matrix was:
 The model correctly classified 2,214 records in the not-down class and 2,338 records in the down class. It produced 800 false positives and 811 false negatives.
 
 
+
 ### Classification Metrics
 
 The model's classification performance on the held-out test set is shown below.
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 270" role="img" aria-label="Bar chart of classification metrics">
-  <text x="20" y="25" font-size="16" font-weight="bold" fill="currentColor">Logistic Regression Performance</text>
-  <g font-size="12" fill="currentColor">
-    <text x="20" y="66">Accuracy</text>
-    <text x="20" y="111">Precision</text>
-    <text x="20" y="156">Recall</text>
-    <text x="20" y="201">F1-score</text>
-  </g>
-  <g fill="#e5e7eb">
-    <rect x="120" y="48" width="400" height="24" rx="3"/>
-    <rect x="120" y="93" width="400" height="24" rx="3"/>
-    <rect x="120" y="138" width="400" height="24" rx="3"/>
-    <rect x="120" y="183" width="400" height="24" rx="3"/>
-  </g>
-  <g fill="#3978c5">
-    <rect x="120" y="48" width="295.6" height="24" rx="3"/>
-    <rect x="120" y="93" width="298" height="24" rx="3"/>
-    <rect x="120" y="138" width="296.8" height="24" rx="3"/>
-    <rect x="120" y="183" width="297.6" height="24" rx="3"/>
-  </g>
-  <g font-size="12" fill="currentColor">
-    <text x="430" y="65">0.739</text>
-    <text x="432" y="110">0.745</text>
-    <text x="430" y="155">0.742</text>
-    <text x="431" y="200">0.744</text>
-    <text x="120" y="235">0.0</text>
-    <text x="310" y="235">0.5</text>
-    <text x="500" y="235">1.0</text>
-  </g>
-</svg>
+| Metric | Score | Visual comparison |
+|---|---:|---|
+| Accuracy | 0.739 | ███████▍░░ 73.9% |
+| Precision | 0.745 | ███████▍░░ 74.5% |
+| Recall | 0.742 | ███████▍░░ 74.2% |
+| F1-score | 0.744 | ███████▍░░ 74.4% |
+
+*Figure 1. Classification metrics for Logistic Regression on the held-out test set.*
 
 
 ### 5.2 Top-20 comparison
@@ -110,33 +89,16 @@ The model's classification performance on the held-out test set is shown below.
 Both rankings placed 20 records labelled `down` among their respective top 20. This result does not show that one method outperforms the other. The baseline implementation and its ranking rules should be checked against the original notebook before treating the comparison as final.
 
 
+
 ### Top-20 Ranking Comparison
 
-Both methods achieved the same Precision@20 on the held-out test set.
+| Method | Precision@20 | Visual comparison |
+|---|---:|---|
+| ML-07 rule-based baseline | 1.00 | ██████████ 100% |
+| Logistic Regression | 1.00 | ██████████ 100% |
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 210" role="img" aria-label="Bar chart showing both methods have Precision at 20 of 1.00">
-  <text x="20" y="25" font-size="16" font-weight="bold" fill="currentColor">Precision@20 by Method</text>
-  <g font-size="12" fill="currentColor">
-    <text x="20" y="70">ML-07 baseline</text>
-    <text x="20" y="125">Logistic Regression</text>
-  </g>
-  <g fill="#e5e7eb">
-    <rect x="155" y="52" width="350" height="25" rx="3"/>
-    <rect x="155" y="107" width="350" height="25" rx="3"/>
-  </g>
-  <g fill="#3978c5">
-    <rect x="155" y="52" width="350" height="25" rx="3"/>
-    <rect x="155" y="107" width="350" height="25" rx="3"/>
-  </g>
-  <g font-size="12" fill="currentColor">
-    <text x="515" y="69">1.00</text>
-    <text x="515" y="124">1.00</text>
-    <text x="155" y="165">0.0</text>
-    <text x="322" y="165">0.5</text>
-    <text x="490" y="165">1.0</text>
-  </g>
-  <text x="20" y="195" font-size="11" fill="currentColor">Equal results; this metric does not establish which method is better.</text>
-</svg>
+*Figure 2. Both methods achieved the same Precision@20; this result does not establish that either method is superior.*
+
 
 
 ## 6. Error Analysis
